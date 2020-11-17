@@ -152,6 +152,10 @@
 
   [outgoing_pools.rdbms.default.connection]
     driver = "mysql"
+#    host = "172.17.0.1"
+#    database = "mongooseim"
+#    username = "mongooseim"
+#    password = "mongooseim"
     host = "xmpp.cdxobztkm7jo.ap-south-1.rds.amazonaws.com"
     database = "mongooseim"
     username = "admin"
@@ -211,6 +215,17 @@
 [modules.mod_bosh]
 
 [modules.mod_carboncopy]
+
+[modules.mod_http_upload]
+  host = "upload.@HOST@"
+  backend = "s3"
+  expiration_time = 120
+  s3.bucket_url = "https://keycommapp.s3-accelerate.amazonaws.com/"
+  s3.region = "us-east-1"
+  s3.add_acl = true
+  s3.access_key_id = "AKIARILGROSM5UZY563W"
+  s3.secret_access_key = "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"
+
 
 {{{mod_http_notification}}}
 
