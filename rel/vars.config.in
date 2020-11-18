@@ -15,7 +15,7 @@
 {http_api_old_endpoint_port, ""}.
 {http_api_client_endpoint_port, ""}.
 
-{hosts, "[\"localhost\"]"}.
+{hosts, "[\"connect.twible.com\"]"}.
 {host_config, ""}.
 {auth_ldap, ""}.
 {s2s_addr, "%% { {s2s_addr, \"example-host.net\"}, { {127,0,0,1}, 5269 } }."}.
