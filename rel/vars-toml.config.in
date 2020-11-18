@@ -44,7 +44,7 @@
 {outgoing_pools, ""}.
 {http_api_old_endpoint, "ip_address = \"127.0.0.1\"
   port = 5288"}.
-{http_api_endpoint, "ip_address = \"127.0.0.1\"
+{http_api_endpoint, "ip_address = \"0.0.0.0\"
   port = 8088"}.
 {http_api_client_endpoint, "port = 8089"}.
 {s2s_use_starttls, "use_starttls = \"optional\""}.

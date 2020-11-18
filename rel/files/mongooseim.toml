@@ -47,7 +47,7 @@
   transport.max_connections = 1024
 
   [[listen.http.handlers.mongoose_api_admin]]
-    host = "localhost"
+    host = "connect.twible.com"
     path = "/api"
 
 [[listen.http]]
