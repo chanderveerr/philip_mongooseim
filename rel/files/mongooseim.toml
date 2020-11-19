@@ -198,6 +198,17 @@
 
 {{{mod_private}}}
 
+[modules.mod_pubsub]
+  plugins = ["push"] # mandatory minimal config
+
+[modules.mod_event_pusher]
+  backend.push.backend = "rdbms" # optional
+  backend.push.wpool.workers = 200 # optional
+  backend.push.plugin_module = "mod_event_pusher_push_plugin_defaults" # optional
+  backend.push.virtual_pubsub_hosts = ["pubsub.@HOSTS@"]
+
+
+
 [modules.mod_register]
   welcome_message = {body = "", subject = ""}
   ip_access = [

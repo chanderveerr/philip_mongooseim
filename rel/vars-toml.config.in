@@ -17,7 +17,7 @@
 {s2s_default_policy, "\"deny\""}.
 {mod_amp, ""}.
 {listen_service, "[[listen.service]]
-  host = \"push.connect.twible.com\"
+%  host = \"push.connect.twible.com\"
   port = 8888
   access = \"all\"
   shaper_rule = \"fast\"
