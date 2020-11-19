@@ -17,11 +17,12 @@
 {s2s_default_policy, "\"deny\""}.
 {mod_amp, ""}.
 {listen_service, "[[listen.service]]
+  host = \"push.connect.twible.com\"
   port = 8888
   access = \"all\"
   shaper_rule = \"fast\"
   ip_address = \"127.0.0.1\"
-  password = \"secret\""}.
+  password = \"miedeijohB4oogeijahP\""}.
 {mod_last, "[modules.mod_last]"}.
 {mod_offline, "[modules.mod_offline]
   access_max_user_messages = \"max_user_offline_messages\""}.
