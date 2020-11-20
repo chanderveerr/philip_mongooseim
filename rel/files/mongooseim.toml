@@ -130,7 +130,12 @@
   max_stanza_size = 131072
   {{{s2s_dhfile}}}
 
-{{{listen_service}}}
+[[listen.service]]
+   port = 5347
+   access = "all"
+   shaper_rule = "fast"
+   ip_address = "127.0.0.1"
+   password = "miedeijohB4oogeijahP"
 
 [auth]
   {{{auth_ldap}}}
@@ -152,14 +157,14 @@
 
   [outgoing_pools.rdbms.default.connection]
     driver = "mysql"
-#    host = "172.17.0.1"
-#    database = "mongooseim"
-#    username = "mongooseim"
-#    password = "mongooseim"
-    host = "xmpp.cdxobztkm7jo.ap-south-1.rds.amazonaws.com"
+    host = "172.17.0.1"
     database = "mongooseim"
-    username = "admin"
-    password = "4ZgrDAKfw4VG5pPcyD"
+    username = "mongooseim"
+    password = "mongooseim"
+#    host = "xmpp.cdxobztkm7jo.ap-south-1.rds.amazonaws.com"
+#    database = "mongooseim"
+#    username = "admin"
+#    password = "4ZgrDAKfw4VG5pPcyD"
 #    tls.required = true
 #    tls.verify_peer = true
 #    tls.cacertfile = "priv/ssl/cacert.pem"
@@ -186,6 +191,40 @@
 
 [modules.mod_muc_light_commands]
 
+[modules.mod_muc_light]
+  host = "muclight.connect.twible.com"
+  backend = "rdbms"
+  equal_occupants = false
+  legacy_mode = false
+  rooms_per_user = 10
+  blocking = false
+  all_can_configure = true
+  all_can_invite = true
+  max_occupants = 50
+  rooms_per_page = 5
+  rooms_in_rosters = true
+
+  [[modules.mod_muc_light.config_schema]]
+    field = "roomname"
+    value = "The Room"
+
+  [[modules.mod_muc_light.config_schema]]
+    field = "subject"
+    value = "The Room"
+
+  [[modules.mod_muc_light.config_schema]]
+    field = "created_at"
+    value = ""
+
+  [[modules.mod_muc_light.config_schema]]
+    field = "image_url"
+    value = ""
+
+  [[modules.mod_muc_light.config_schema]]
+    field = "room_description"
+    value = ""
+
+
 {{{mod_last}}}
 
 [modules.mod_stream_management]
@@ -199,15 +238,17 @@
 {{{mod_private}}}
 
 [modules.mod_pubsub]
-  plugins = ["push"] # mandatory minimal config
+  access_createnode = "all"
+  ignore_pep_from_offline = true
+  backend = "rdbms"
+  last_item_cache = "mnesia"
+  max_items_node = 1000
+  plugins = ["flat", "pep", "push"]
 
 [modules.mod_event_pusher]
-  backend.push.backend = "rdbms" # optional
-  backend.push.wpool.workers = 200 # optional
-  backend.push.plugin_module = "mod_event_pusher_push_plugin_defaults" # optional
-  backend.push.virtual_pubsub_hosts = ["pubsub.@HOSTS@"]
-
-
+  backend.push.backend = "rdbms"
+  backend.push.wpool.workers = 200
+  backend.push.plugin_module = "mod_event_pusher_push_plugin_defaults"
 
 [modules.mod_register]
   welcome_message = {body = "", subject = ""}
