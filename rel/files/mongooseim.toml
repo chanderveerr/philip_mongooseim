@@ -47,7 +47,7 @@
   transport.max_connections = 1024
 
   [[listen.http.handlers.mongoose_api_admin]]
-    host = "connect.twible.com"
+    host = "tawkii.com"
     path = "/api"
 
 [[listen.http]]
@@ -157,14 +157,14 @@
 
   [outgoing_pools.rdbms.default.connection]
     driver = "mysql"
-    host = "172.17.0.1"
-    database = "mongooseim"
-    username = "mongooseim"
-    password = "mongooseim"
-#    host = "xmpp.cdxobztkm7jo.ap-south-1.rds.amazonaws.com"
+#    host = "172.17.0.1"
 #    database = "mongooseim"
-#    username = "admin"
-#    password = "4ZgrDAKfw4VG5pPcyD"
+#    username = "mongooseim"
+#    password = "mongooseim"
+    host = "xmpp.c66fw0amkylk.us-east-2.rds.amazonaws.com"
+    database = "mongooseim"
+    username = "admin"
+    password = "4ZgrDAKfw4VG5pPcyD"
 #    tls.required = true
 #    tls.verify_peer = true
 #    tls.cacertfile = "priv/ssl/cacert.pem"
@@ -192,7 +192,7 @@
 [modules.mod_muc_light_commands]
 
 [modules.mod_muc_light]
-  host = "muclight.connect.twible.com"
+  host = "muclight.tawkii.com"
   backend = "rdbms"
   equal_occupants = false
   legacy_mode = false

@@ -10,14 +10,14 @@
 {highload_vm_args, "+P 10000000 -env ERL_MAX_PORTS 250000"}.
 
 % TOML config
-{hosts, "\"connect.twible.com\""}.
+{hosts, "\"tawkii.com\""}.
 {host_config, ""}.
 {auth_ldap, ""}.
 {s2s_addr, ""}.
 {s2s_default_policy, "\"deny\""}.
 {mod_amp, ""}.
 {listen_service, "[[listen.service]]
-%  host = \"push.connect.twible.com\"
+%  host = \"push.tawkii.com\"
   port = 8888
   access = \"all\"
   shaper_rule = \"fast\"
