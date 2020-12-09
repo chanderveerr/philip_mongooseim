@@ -119,7 +119,7 @@
   {{{zlib}}}
   access = "c2s"
   shaper = "c2s_shaper"
-  max_stanza_size = 65536
+  max_stanza_size = 655360
   {{{c2s_dhfile}}}
 
 {{{secondary_c2s}}}
@@ -196,12 +196,12 @@
   backend = "rdbms"
   equal_occupants = false
   legacy_mode = false
-  rooms_per_user = 10
+  rooms_per_user = "infinity"
   blocking = false
   all_can_configure = true
   all_can_invite = true
-  max_occupants = 50
-  rooms_per_page = 5
+  max_occupants = "infinity"
+  rooms_per_page = "infinity"
   rooms_in_rosters = true
 
   [[modules.mod_muc_light.config_schema]]
@@ -229,7 +229,7 @@
 
 [modules.mod_stream_management]
 
-{{{mod_offline}}}
+[modules.mod_offline_stub]
 
 {{{mod_privacy}}}
 
@@ -278,11 +278,16 @@
   s3.access_key_id = "AKIARILGROSM5UZY563W"
   s3.secret_access_key = "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"
 
+[modules.mod_mam_meta]
+  backend = "rdbms"
+  archive_chat_markers = true
+  pm.user_prefs_store = "mnesia"
+
 
 {{{mod_http_notification}}}
 
 [shaper.normal]
-  max_rate = 1000
+  max_rate = 50_000
 
 [shaper.fast]
   max_rate = 50_000
