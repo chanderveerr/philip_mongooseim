@@ -202,7 +202,7 @@
   all_can_invite = true
   max_occupants = "infinity"
   rooms_per_page = "infinity"
-  rooms_in_rosters = true
+
 
   [[modules.mod_muc_light.config_schema]]
     field = "roomname"
