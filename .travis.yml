@@ -1,6 +1,6 @@
 language: erlang
 dist: xenial
-sudo: true
+sudo: $TEST
 addons:
     apt:
         packages:
