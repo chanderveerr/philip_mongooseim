@@ -10,7 +10,7 @@ addons:
         - slapd
         - ldap-utils
         - golang # used for google drive test results upload
-        - unixodbc  # for mssql
+        - unixodbc # for mssql
         - tdsodbc   # for mssql
     hosts:
         # travis tries to resolve muc.localhost and fails
