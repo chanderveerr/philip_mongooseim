@@ -1,6 +1,6 @@
 language: erlang
 dist: xenial
-sudo: required
+sudo: true
 addons:
     apt:
         packages:
